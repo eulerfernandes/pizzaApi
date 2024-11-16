@@ -1,21 +1,31 @@
 {
-  "name": "pizzaapi",
+  "name": "pizza-api",
   "version": "1.0.0",
+  "description": "API para gerenciamento de pedidos e cardápio de uma pizzaria.",
   "main": "src/server.js",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "sequelize": "sequelize",
+    "db:create": "sequelize db:create",
+    "db:migrate": "sequelize db:migrate",
+    "db:seed": "sequelize db:seed:all",
+    "db:reset": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all",
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
   "author": {
     "name": "Euler Fernandes",
     "url": "https://github.com/eulerfernandes"
   },
   "license": "ISC",
-  "description": "Pizza API.",
   "dependencies": {
     "express": "^4.21.1",
     "pg": "^8.13.1",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.37.5"
+    "sequelize": "^6.37.5",
+    "dotenv": "^16.3.1",
+    "cors": "^2.8.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
@@ -25,6 +35,7 @@
     "globals": "^15.12.0",
     "prettier": "^3.3.3",
     "sequelize-cli": "^6.6.2",
-    "sucrase": "^3.35.0"
+    "sucrase": "^3.35.0",
+    "nodemon": "^3.0.1"
   }
 }
