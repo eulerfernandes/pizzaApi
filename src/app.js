@@ -1,5 +1,5 @@
 const express = require("express");
-
+const routes = require("./routes.js");
 class App {
   constructor() {
     this.app = express();
@@ -12,7 +12,9 @@ class App {
     this.app.use(express.json());
   }
 
-  routes() {}
+  routes() {
+    this.app.use(routes);
+  }
 }
 
 module.exports = new App().app;
