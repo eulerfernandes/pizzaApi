@@ -1,5 +1,5 @@
-import express from "express";
-import routes from "./routes.js";
+import express from 'express';
+import routes from './routes.js';
 class App {
   constructor() {
     this.app = express();
